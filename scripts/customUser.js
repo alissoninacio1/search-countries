@@ -12,10 +12,10 @@ btn.addEventListener('click', () => {
   btn.style.display = 'none'
   inputField.style.display = 'none'
 
-  // try {
-  //   localStorage.setItem('userName', userName.value);
-  // }
-  // catch(err) {
-  //   console.log('Enable you cookies')
-  // }
+  try {
+    localStorage.setItem('userName', userName.value);
+  }
+  catch(err) {
+    console.log('Enable you cookies')
+  }
 })
