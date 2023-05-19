@@ -12,6 +12,8 @@ btn.addEventListener('click', () => {
   btn.style.display = 'none'
   inputField.style.display = 'none'
 
+  // work in this feature, check if there is a local storage, if not, don't dislpay the fields for input
+
   try {
     localStorage.setItem('userName', userName.value);
   }
