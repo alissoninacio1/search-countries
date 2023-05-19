@@ -10,10 +10,37 @@
 <body>
 
     <header>
-        <label for="search">Search</label>
-        <input type="text" id="search" placeholder="Search for countries or locations">
+        <!-- custom user with local storage -->
+        <div>
+
+            <div id="customPage">
+            </div>
+                        
+            <label for="userInput"></label>
+            <input 
+                type="text" 
+                id="userInput" 
+                name='userInput'
+                placeholder="Write your name"
+            >
+
+            <button id="btn">Ready</button>
+        </div>
+
+
+        <!-- search bar -->
+        <div>
+
+            <label for="search">Search</label>
+            <input 
+                type="text" 
+                id="search" 
+                placeholder="Search for countries or locations"
+            >
+        </div>
     </header>
 
+    <!--  main content to display the countries -->
     <main>
         <ul id="list">
             <!-- elements will be add using JS -->
@@ -23,6 +50,7 @@
 </body>
 <script  src="./scripts/displayCountries.js" ></script>
 <script  src="./scripts/filterCountries.js"></script>
+<script  src="/scripts/customUser.js"></script>
 <script  src="./scripts/main.js" ></script>
 
 </html>
