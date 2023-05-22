@@ -94,3 +94,4 @@ window.onload = () => {
   console.log(`the message is: --${message} --. outside the event`)
 }
 
+console.log(message)
