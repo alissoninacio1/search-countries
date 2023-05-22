@@ -40,7 +40,6 @@ if (message) {
 else {
 
   btn.addEventListener('click', () => {
-
     renderUser(userName.value)
     console.log('user name added')
 
@@ -67,6 +66,7 @@ btnChange.addEventListener('click', (e) => {
 
   //clear the localStorage to add a new name
   localStorage.clear()
+
   console.log('user elimininated')
 
   //display input and button again
@@ -79,10 +79,18 @@ btnChange.addEventListener('click', (e) => {
   //if not, don't allow the event 
   else {
     e.preventDefault()
-    alert('There is no user. Please, provide your name!')
+
+    alert('There is no user. Please, provide your name!')    
   }
 
   //restart the input values - assigning the value as undefined
-  userName.value = ''
-
+  userName.value = ''  
+  //test
+  console.log(` test to see the message value: --${message} inside the event--.`)
 })
+
+//test
+window.onload = () => {
+  console.log(`the message is: --${message} --. outside the event`)
+}
+
