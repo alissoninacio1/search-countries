@@ -1,4 +1,7 @@
 const list = document.querySelector('#list')
+//original link
+// const url = 'https://restcountries.com/v3.1/all'
+//
 const url = 'https://raw.githubusercontent.com/alissoninacio1/countries-api-project/main/restcountries.json'
 
 
@@ -6,6 +9,8 @@ const url = 'https://raw.githubusercontent.com/alissoninacio1/countries-api-proj
 fetch(url)
    .then(response => response.json())
    .then(data => { 
+
+        //------------------DISPLAY A LIST OF COUNTRIES---------------------
 
         //it returns an array containing the given object's own enumerable string-keyed property values
         const countries = Object.values(data)
@@ -17,7 +22,8 @@ fetch(url)
         //each value got from the object is added to the array
         //this is for separate the countries names of the JSON
             countriesArray.push(e.name.common)
-
+            // console.log('contagem')
+            // console.log(countries)
         })
 
         //sort the the countries names
@@ -36,11 +42,59 @@ fetch(url)
         })
 
 
-        const links = document.querySelectorAll('a[href]') 
+        //------------------DISPLAY COUNTRIES DETAILS--------------------
+
+        const links = document.querySelectorAll('.countries-list') 
         console.log(links)
-        //use the event to onclick to match the href attribute
-        //after click, if the country match the href selected, then add a class that display on index z=2 and display an html
-        // for exhibits the data from the countries
+
+        // 'a' is the the country
+        links.forEach( a => {
+            a.addEventListener('click', () => {
+
+                //select where to include the country details
+                const details = document.querySelector('#country-details')
+
+                //assign the value of each innerText to a variable
+                                //The innerText property of the HTMLElement interface represents the "rendered" 
+                //text content of a  node and its descendants.
+                let countryName = a.innerText
+                //then, use the findIndex that match the value describe in the innerText
+                // The findIndex() method returns the index of the first element in an array 
+                //that satisfies the provided testing function.
+                //test - find the index of the objetc whose 'el.name.common' (this piece is taken from the object) 
+                //is equal to the innerText inside the a links. 
+                let countryMatch = countries.findIndex(el => el.name.common == countryName)
+                const selection = countries[countryMatch]
+
+                // console.log(countryMatch)
+                // console.log(`${selection.name.common}  and ${selection.name.official}`)
+
+
+                //this '+' won't be added to this piece of code, since it adds the elements one after another
+                //and we want to display 
+                details.innerHTML = 
+                
+
+                    `
+                    <p>
+                        ${selection.name.common}
+                    </p>
+                
+                    <p>
+                        ${selection.name.official}
+                    </p>
+
+                    <img src='${selection.flags.svg ?? selection.flags.png}' alt='${selection.flag.alt}'>
+                    
+                    `
+                    //flag.svg or flag.png or flag.alt
+
+                alert(`Voce clicou em ${countryName}`)
+
+
+            })
+
+        })
            
 
     })

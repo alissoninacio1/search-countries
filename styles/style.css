@@ -41,7 +41,7 @@
 }
 
 main {
-  height: 30rem;
+  height: 20rem;
   /* width: 50rem; */
   overflow-y: scroll;
 }
