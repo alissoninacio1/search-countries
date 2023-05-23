@@ -28,12 +28,20 @@ fetch(url)
             //this '+' is for adding the elements one after another
             list.innerHTML += `
                 <li class='countries-list'>
-                    <a href="#">
+                    <a href='#' id='${el.toLowerCase()}'>
                         ${el}
                     </a>               
                 </li>    
             `
         })
+
+
+        const links = document.querySelectorAll('a[href]') 
+        console.log(links)
+        //use the event to onclick to match the href attribute
+        //after click, if the country match the href selected, then add a class that display on index z=2 and display an html
+        // for exhibits the data from the countries
+           
 
     })
     .catch(err => console.log('Fetch Error :', err));

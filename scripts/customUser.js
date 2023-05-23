@@ -23,6 +23,7 @@ const  renderUser = (name) => {
   cp.innerHTML = 
   //the code inside the ${} is pure JS, thats assigning a default value to the name
   //in case of the user don't add a name and press the 'ready' button
+  //the user default 'User' is not set to the localStorage to disappear when the page be reloaded
   `
     <p class='user-welcome'>Welcome ${(name == '') ? 'User': name}!</p>
   `
