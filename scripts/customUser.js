@@ -66,8 +66,17 @@ btnChange.addEventListener('click', (e) => {
 
   //clear the localStorage to add a new name
   localStorage.clear()
-
   console.log('user elimininated')
+
+
+  //this set time interval is to reload the page after the console 'user eliminated'
+  setInterval(() => {
+    //this piece is for reload the page to avoid a bug of firing the events 
+    //when the page is reloaded many times, the 'ready' event won't be fired and
+    // the variable message will store the last name stored in localStorage, even when this is cleared.
+    location.reload()
+    
+  },200)
 
   //display input and button again
   displayInputAndButton('inline')
@@ -85,13 +94,8 @@ btnChange.addEventListener('click', (e) => {
 
   //restart the input values - assigning the value as undefined
   userName.value = ''  
-  //test
-  console.log(` test to see the message value: --${message} inside the event--.`)
+
+
+  
 })
 
-//test
-window.onload = () => {
-  console.log(`the message is: --${message} --. outside the event`)
-}
-
-console.log(message)
