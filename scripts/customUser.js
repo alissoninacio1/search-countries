@@ -21,19 +21,19 @@ const displayInputAndButton  = (value) => {
 //render the userName to the screen
 const  renderUser = (name) => {
   cp.innerHTML = 
+  //the code inside the ${} is pure JS, thats assigning a default value to the name
+  //in case of the user don't add a name and press the 'ready' button
   `
-    <p class='user-welcome'>Welcome ${name}!</p>
+    <p class='user-welcome'>Welcome ${(name == '') ? 'User': name}!</p>
   `
-  // btn.style.display = 'none'
-  // inputField.style.display = 'none'
+
   displayInputAndButton('none')
 }
 
 
-
 //if there is a name stored, then the user is rendered and the input is not showed
 if (message) {
-  renderUser(message)
+  renderUser(message) 
 } 
 //if not, the input is showed and the input will ask to add a userName
 //the event will be available again
@@ -42,7 +42,8 @@ else {
   btn.addEventListener('click', () => {
     renderUser(userName.value)
     console.log('user name added')
-
+  
+    //handling errors when cookies aren't unabled in the browser
     try {
       localStorage.setItem('userName', userName.value);
     }
@@ -66,7 +67,7 @@ btnChange.addEventListener('click', (e) => {
 
   //clear the localStorage to add a new name
   localStorage.clear()
-  console.log('user elimininated')
+ 
 
 
   //this set time interval is to reload the page after the console 'user eliminated'
@@ -84,6 +85,7 @@ btnChange.addEventListener('click', (e) => {
   //remove the first child of the custom page div if it exists
   if (cp.firstElementChild) {
     cp.firstElementChild.remove()
+    console.log('user elimininated')
   } 
   //if not, don't allow the event 
   else {
@@ -92,10 +94,9 @@ btnChange.addEventListener('click', (e) => {
     alert('There is no user. Please, provide your name!')    
   }
 
-  //restart the input values - assigning the value as undefined
+  //restart the input values - assigning the value as undefined, 
+  //even when the page will be reload, because the previous value can appear for some seconds in the input field
   userName.value = ''  
-
-
   
 })
 
