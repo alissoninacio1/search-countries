@@ -84,10 +84,11 @@ fetch(url)
                         ${selection.name.official}
                     </p>
 
-                    <img src='${selection.flags.svg ?? selection.flags.png}' alt='${selection.flag.alt}'>
+                    <img src=${selection.flags.png} alt=${selection.flags.alt}>
                     
                     `
                     //flag.svg or flag.png or flag.alt
+                    //svg can get an error in case of using ad blocks or vpn - Getting "net::ERR_BLOCKED_BY_CLIENT" 
 
                 alert(`Voce clicou em ${countryName}`)
 
