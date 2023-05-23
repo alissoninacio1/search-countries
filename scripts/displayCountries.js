@@ -1,5 +1,5 @@
 const list = document.querySelector('#list')
-export const url = 'https://raw.githubusercontent.com/alissoninacio1/countries-api-project/main/restcountries.json'
+const url = 'https://raw.githubusercontent.com/alissoninacio1/countries-api-project/main/restcountries.json'
 
 
 
