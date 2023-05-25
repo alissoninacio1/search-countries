@@ -25,7 +25,7 @@ const  renderUser = (name) => {
   //in case of the user don't add a name and press the 'ready' button
   //the user default 'User' is not set to the localStorage to disappear when the page be reloaded
   `
-    <p class='user-welcome'>Welcome ${(name == '') ? 'User': name}!</p>
+    <p class='user-welcome'>Welcome ${(name == '') ? 'User' : name}!</p>
   `
 
   displayInputAndButton('none')

@@ -45,7 +45,6 @@ fetch(url)
         //------------------DISPLAY COUNTRIES DETAILS--------------------
 
         const links = document.querySelectorAll('.countries-list') 
-        console.log(links)
 
         // 'a' is the the country
         links.forEach( a => {
@@ -55,7 +54,7 @@ fetch(url)
                 const details = document.querySelector('#country-details')
 
                 //assign the value of each innerText to a variable
-                                //The innerText property of the HTMLElement interface represents the "rendered" 
+                //The innerText property of the HTMLElement interface represents the "rendered" 
                 //text content of a  node and its descendants.
                 let countryName = a.innerText
                 //then, use the findIndex that match the value describe in the innerText
@@ -66,22 +65,40 @@ fetch(url)
                 let countryMatch = countries.findIndex(el => el.name.common == countryName)
                 const selection = countries[countryMatch]
 
-                // console.log(countryMatch)
-                // console.log(`${selection.name.common}  and ${selection.name.official}`)
+
 
 
                 //this '+' won't be added to this piece of code, since it adds the elements one after another
                 //and we want to display 
-                details.innerHTML = 
+                details.innerHTML =                
                 
-
                     `
+                    <h2>${selection.name.common}</h2>
+
                     <p>
-                        ${selection.name.common}
+                        ${selection.name.common} is in ${selection.continents} and borders with ${(selection.borders) ? selection.borders.join(', ') : 'the sea (island)'}. 
                     </p>
+
+
+                    <p>
+                        The official name is ${selection.name.official} and its capital is ${selection.capital}. The official language spoken is ${Object.values(selection.languages)[0]} and the currency is known as ${Object.values(selection.currencies)[0].name} - '${Object.values(selection.currencies)[0].symbol}'
+                    </p>
+                    
+
+                    <p>
+                        ${selection.name.common} has ${new Intl.NumberFormat().format(selection.area)} sq. km, and has a population of ${new Intl.NumberFormat().format(selection.population)} approximatelly. It has ${selection.timezones.length} timezone(s): ${selection.timezones.join(', ')}. 
+                    </p>
+
+                    <p>
+                        Click to see ${selection.name.common} on Maps
+                        <a href=${selection.maps.googleMaps} target='_blank'> here <a> 
+                   </p>
+
+
                 
                     <p>
                         ${selection.name.official}
+                        ${selection.startOfWeek}
                     </p>
 
                     <img src=${selection.flags.png} alt=${selection.flags.alt}>
