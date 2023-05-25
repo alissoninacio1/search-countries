@@ -66,42 +66,65 @@ fetch(url)
                 const selection = countries[countryMatch]
 
 
-
+                //an object to store the variables it will be used to be displayed
+                const detailsToUse = {
+                    name: selection.name.common,
+                    officialName: selection.name.official,
+                    continent: selection.continents,
+                    border: (selection.borders) ? selection.borders.join(', ') : 'the sea (island)', 
+                    capital: selection.capital,
+                    currency: Object.values(selection.currencies)[0].name, 
+                    symbol: Object.values(selection.currencies)[0].symbol,
+                    language: Object.values(selection.languages)[0],
+                    timezone: selection.timezones, 
+                    seeMaps: selection.maps.googleMaps,
+                    population: new Intl.NumberFormat().format(selection.population),
+                    area: new Intl.NumberFormat().format(selection.area),
+                    countryFlag: selection.flags.png, 
+                    altFlagImg: selection.flags.alt, 
+                    day: selection.startOfWeek.charAt(0).toUpperCase() + selection.startOfWeek.slice(1),
+                    domain: selection.tld
+                    
+                }
 
                 //this '+' won't be added to this piece of code, since it adds the elements one after another
                 //and we want to display 
                 details.innerHTML =                
                 
                     `
-                    <h2>${selection.name.common}</h2>
+                    <h2>${detailsToUse.name}</h2>
 
                     <p>
-                        ${selection.name.common} is in ${selection.continents} and borders with ${(selection.borders) ? selection.borders.join(', ') : 'the sea (island)'}. 
+                        ${detailsToUse.name} is in ${detailsToUse.officialName} and borders with ${detailsToUse.border}. 
                     </p>
 
 
                     <p>
-                        The official name is ${selection.name.official} and its capital is ${selection.capital}. The official language spoken is ${Object.values(selection.languages)[0]} and the currency is known as ${Object.values(selection.currencies)[0].name} - '${Object.values(selection.currencies)[0].symbol}'
+                        The official name is ${detailsToUse.officialName} and its capital is ${detailsToUse.capital}. The official language spoken is ${detailsToUse.language} and the currency is known as ${detailsToUse.currency} - '${detailsToUse.symbol}'
                     </p>
                     
 
                     <p>
-                        ${selection.name.common} has ${new Intl.NumberFormat().format(selection.area)} sq. km, and has a population of ${new Intl.NumberFormat().format(selection.population)} approximatelly. It has ${selection.timezones.length} timezone(s): ${selection.timezones.join(', ')}. 
+                        ${detailsToUse.name} has ${detailsToUse.area} sq. km, and has a population of ${detailsToUse.population} approximatelly. It has ${detailsToUse.timezone.length} timezone(s): ${detailsToUse.timezone.join(', ')}. 
                     </p>
 
                     <p>
-                        Click to see ${selection.name.common} on Maps
-                        <a href=${selection.maps.googleMaps} target='_blank'> here <a> 
+                        <a href=${detailsToUse.seeMaps} target='_blank'> 
+                            Click here 
+                        <a> 
+                        to see ${detailsToUse.name} on Google Maps.
                    </p>
 
 
                 
                     <p>
-                        ${selection.name.official}
-                        ${selection.startOfWeek}
+                        
+                        The week in ${detailsToUse.name} starts on ${detailsToUse.day}. The official top-level domain is '${detailsToUse.domain}'
+
                     </p>
 
-                    <img src=${selection.flags.png} alt=${selection.flags.alt}>
+                    <h3>Official Flag</h3>
+                    <img src=${detailsToUse.countryFlag} alt=${detailsToUse.altFlagImg} id='offical-image'>
                     
                     `
                     //flag.svg or flag.png or flag.alt
