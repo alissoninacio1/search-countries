@@ -66,7 +66,7 @@ fetch(url)
                 const selection = countries[countryMatch]
 
 
-                //an object to store the variables it will be used to be displayed
+                //an object to store the variables who will be used to be displayed
                 const detailsToUse = {
                     name: selection.name.common,
                     officialName: selection.name.official,
