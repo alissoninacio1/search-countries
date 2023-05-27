@@ -94,37 +94,58 @@ fetch(url)
                     `
                     <h2>${detailsToUse.name}</h2>
 
-                    <p>
-                        ${detailsToUse.name} is in ${detailsToUse.officialName} and borders with ${detailsToUse.border}. 
-                    </p>
 
+                    <button class="accordion">Country</button>
+                    <div class="panel">
+                        <p>
+                             ${detailsToUse.name} is in ${detailsToUse.officialName} and borders with ${detailsToUse.border}. 
+                        </p>
+                    </div>
 
-                    <p>
-                        The official name is ${detailsToUse.officialName} and its capital is ${detailsToUse.capital}. The official language spoken is ${detailsToUse.language} and the currency is known as ${detailsToUse.currency} - '${detailsToUse.symbol}'
-                    </p>
                     
+                    <button class="accordion">Geography</button>
+                    <div class="panel">
+                        <p>
+                            The official name is ${detailsToUse.officialName} and its capital is ${detailsToUse.capital}. The official language spoken is ${detailsToUse.language} and the currency is known as ${detailsToUse.currency} - '${detailsToUse.symbol}'.
+                        </p>
+                    </div>
 
-                    <p>
-                        ${detailsToUse.name} has ${detailsToUse.area} sq. km, and has a population of ${detailsToUse.population} approximatelly. It has ${detailsToUse.timezone.length} timezone(s): ${detailsToUse.timezone.join(', ')}. 
-                    </p>
+                  
+                    <button class="accordion">Demography</button>
+                    <div class="panel">
+                        <p>
+                          ${detailsToUse.name} has ${detailsToUse.area} sq. km, and has a population of ${detailsToUse.population} approximatelly. It has ${detailsToUse.timezone.length} timezone(s): ${detailsToUse.timezone.join(', ')}. 
+                        </p>
+                    </div>
 
-                    <p>
-                        <a href=${detailsToUse.seeMaps} target='_blank'> 
-                            Click here 
-                        <a> 
-                        to see ${detailsToUse.name} on Google Maps.
-                   </p>
+                   
+                    <button class="accordion">Maps</button>
+                    <div class="panel">
+                        <p>
+                            <a href=${detailsToUse.seeMaps} target='_blank'> 
+                                Click here 
+                            <a> 
+                            to see ${detailsToUse.name} on Google Maps.
+                        </p>
+                    </div>
+
+                    
+                   <button class="accordion">Curiosities</button>
+                   <div class="panel">
+                        <p>                        
+                            The week in ${detailsToUse.name} starts on ${detailsToUse.day}. The official top-level domain is '${detailsToUse.domain}'.
+
+                        </p>
+                   </div>
 
 
-                
-                    <p>
-                        
-                        The week in ${detailsToUse.name} starts on ${detailsToUse.day}. The official top-level domain is '${detailsToUse.domain}'
+                    
+                    <button class="accordion">Section 1</button>
+                    <div class="panel">
+                        <h3>Official Flag</h3>
+                        <img src=${detailsToUse.countryFlag} alt=${detailsToUse.altFlagImg} id='offical-image'>
+                    </div>
 
-                    </p>
-
-                    <h3>Official Flag</h3>
-                    <img src=${detailsToUse.countryFlag} alt=${detailsToUse.altFlagImg} id='offical-image'>
                     
                     `
                     //flag.svg or flag.png or flag.alt
