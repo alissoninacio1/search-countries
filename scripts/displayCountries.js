@@ -166,6 +166,7 @@ fetch(url)
                       if (panel.style.maxHeight) {
                         panel.style.maxHeight = null;
                       } else {
+                        //Set the height of the element to the value returned from scrollHeight
                         panel.style.maxHeight = panel.scrollHeight + "rem";
                       } 
                     })
