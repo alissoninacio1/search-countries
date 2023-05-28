@@ -32,9 +32,10 @@ fetch(url)
         //display the elements dynamically
         countriesArray.forEach(el => {
             //this '+' is for adding the elements one after another
+            //passing the id to the 'a' element for changing the screen to the country selected 
             list.innerHTML += `
                 <li class='countries-list'>
-                    <a href='#' id='${el.toLowerCase()}'>
+                    <a href='#country-details' id='${el.toLowerCase()}'>
                         ${el}
                     </a>               
                 </li>    
@@ -49,9 +50,6 @@ fetch(url)
         // 'a' is the the country
         links.forEach( a => {
             a.addEventListener('click', () => {
-
-                //select where to include the country details
-                const details = document.querySelector('#country-details')
 
                 //assign the value of each innerText to a variable
                 //The innerText property of the HTMLElement interface represents the "rendered" 
@@ -86,6 +84,9 @@ fetch(url)
                     domain: selection.tld
                     
                 }
+
+                //select where to include the country details
+                const details = document.querySelector('#country-details')
 
                 //this '+' won't be added to this piece of code, since it adds the elements one after another
                 //and we want to display 
@@ -140,24 +141,39 @@ fetch(url)
 
 
                     
-                    <button class="accordion">Section 1</button>
+                    <button class="accordion">Flag</button>
                     <div class="panel">
                         <h3>Official Flag</h3>
                         <img src=${detailsToUse.countryFlag} alt=${detailsToUse.altFlagImg} id='offical-image'>
-                    </div>
-
-                    
+                    </div>                    
                     `
-                    //flag.svg or flag.png or flag.alt
-                    //svg can get an error in case of using ad blocks or vpn - Getting "net::ERR_BLOCKED_BY_CLIENT" 
+                    //flag.svg or flag.png and flag.alt
+                    //svg can get an error in case of using ad blocks or vpn - Getting "net::ERR_BLOCKED_BY_CLIENT"  
 
-                alert(`Voce clicou em ${countryName}`)
+                  
+                //============DETAILS SELECTION ============
+                const acc = document.querySelectorAll(".accordion");  
+               
+                //looping over the buttons
+                for (let i of acc) {
+                    i.addEventListener("click", function() {
 
+                      this.classList.toggle("active");
 
+                      let panel = this.nextElementSibling;
+                      //check if the element 'div' is displayed on screen (if it has the max height set)  
+                      //if the element already is displayed, set to null do hide it, else, set the default height the el need
+                      if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                      } else {
+                        panel.style.maxHeight = panel.scrollHeight + "rem";
+                      } 
+                    })
+                  }
+
+                // alert(`Voce clicou em ${countryName}`)          
             })
-
         })
-           
 
     })
     .catch(err => console.log('Fetch Error :', err));
