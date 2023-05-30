@@ -10,6 +10,23 @@
 <body>
 
     <header>
+        <nav>
+            <div class="menu-icon"> 
+                <!-- hamburger menu -->
+                <div class="icon"></div>
+                <div class="icon"></div>
+                <div class="icon"></div>
+            </div>
+
+
+
+            <div id="links-menu">
+                <a href="#linkedin">Author</a>
+                <a href="#project">Project</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+
         <h1>Search Countries</h1>
         <!-- custom user with local storage -->
         <div id="form-user">
@@ -22,8 +39,6 @@
                 id="userInput" 
                 name='userInput'
                 placeholder="Write your name"
-                minlength="1"
-                maxlength="15"
             >
 
             <button id="btn">Ready</button>
@@ -49,25 +64,27 @@
         </ul>
     </main>
 
-    <section id="country-details">
+    <div id="country-details">
         
-    </section>
+    </div>
 
     <footer>
         <div class="links-container">
-            <a href="https://www.linkedin.com/in/alisson-inacio/">Author</a>
-            <a href="https://github.com/alissoninacio1/search-countries">Project</a>
-            <a href="mailto:alissoninacio96@gmail.com">Contact</a>
+            <a id="linkedin" href="https://www.linkedin.com/in/alisson-inacio/">Author</a>
+            <a id="project" href="https://github.com/alissoninacio1/search-countries">Project</a>
+            <a id="contact" href="mailto:alissoninacio96@gmail.com">Contact</a>
             <span>&reg;Search Countries</span>
         </div>
     </footer>
+
+    <script  src="./scripts/main.js"></script>
+    <script  src="./scripts/filterCountries.js"></script>
+    <script  src="./scripts/customUser.js"></script>
+    <script  src="./scripts/displayCountries.js" ></script>
    
 </body>
 
-<script  src="./scripts/main.js" ></script>
-<script  src="./scripts/filterCountries.js"></script>
-<script  src="./scripts/customUser.js"></script>
-<script  src="./scripts/displayCountries.js" ></script>
+
 
 
 </html>

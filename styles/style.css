@@ -18,20 +18,133 @@
   --lora: 'Lora', serif;
   --noto-sans: 'Noto Sans', sans-serif;
 
+  --display-animation:linkAnim 0.5s ease 0s 1 normal forwards;
+
+}
 
 
+/* --general rule for input*/
+/* 
+  use webkit to run in all browsers
+  input:focus::placeholder
+*/
+input:focus::-webkit-input-placeholder  { 
+  opacity: 0;
 }
 
 
 /* =====================MOBILE VERSION================= */
 
-header {
-  background: var(--white-color);
 
+
+
+/* --------hamburguer menu ---------*/
+/* menu icon styles */
+.menu-icon {
+  width: 2.5rem;
+  margin: 1.2rem 0.2rem;
+}
+  
+.menu-icon > div  {
+   width: 2.5rem;
+   height: 0.3125rem;
+   background-color: var(--white-color);
+   margin: 0.375rem 0 0;
+   position:relative; /* Needed to define the z-index */
+   z-index: 3;
+   transition: 0.1s ease-out;
 }
 
 
+
+.menu-icon:hover {
+  cursor: pointer; 
+} 
+
+.menu-icon:hover > div {
+  /* searched in stackoverflow*/
+  /* http://bitly.ws/B9kU */
+  background-color: var(--columbia-blue);
+}
+ 
+
+/* class to be added with JS */
+/* .menu-expanded  */
+
+/* behavior of each div icon with after the class be added */
+
+.menu-expanded:nth-of-type(1) {
+  transform: translate(1rem)
+             rotate(45deg) 
+             translateY(1rem);
+}
+  
+.menu-expanded:nth-of-type(2) {
+  opacity: 0;
+   /* this is for remove element on the screen fastest */
+  transition: 0.01s;
+}
+  
+.menu-expanded:nth-of-type(3) {
+  transform: translate(1rem)
+             rotate(-45deg)
+             translateY(-1rem);
+}
+  
+
+
+
+
 /* -----header----- */
+
+header {
+  background: var(--white-color);
+}
+
+nav {
+  background: var(--oxford-blue );
+  padding: 0.2rem;
+}
+
+#links-menu {
+  font-family: var(--noto-sans);
+  display: none;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+
+/* 
+ this class needs to be after the previous display 'none' 
+ to display the code block. 
+*/
+.show-navigation {
+  display:block !important;
+}
+
+@keyframes linkAnim {
+	100% {
+		opacity: 1;
+	}
+
+	0%{
+		opacity: 0;
+	}
+}
+
+#links-menu > a {
+  text-decoration: none;
+  color: var(--white-color);
+  font-size: 0.8rem;
+  padding: 1rem;
+  animation: var(--display-animation);
+}
+
+
+#links-menu > a:hover {
+  color: var(--columbia-blue);
+  transition: all 0.2s ease-out;
+}
 
 h1 {
   text-align: center;
@@ -62,7 +175,7 @@ h1 {
   border: solid var(--carolina-blue);
   color: var(--white-color);
   background: var(--carolina-blue);
-  width: 45%;
+  width: 40%;
 }
 
 #form-user button:hover {
@@ -76,6 +189,7 @@ h1 {
 .user-welcome {
   font-size: 1.2rem;
   color: white;
+  animation: var(--display-animation);
 }
 
 #userInput {
@@ -93,7 +207,7 @@ h1 {
   color: var(--oxford-blue);
   text-align: center;
   transition: all ease-in 0.2s;
-  border: solid var(--white-color) 1px;
+  border: solid var(--white-color) 0.1rem;
 
   /* remove the yellow border chrome set to default on focus */
   outline: 0;
@@ -107,8 +221,6 @@ h1 {
   color: var(--oxford-blue);
 
 }
-
-
 
 
 /* ---main list---- */
@@ -129,8 +241,10 @@ h1 {
   border: 1px solid #ddd; 
 
   border-radius: 5px;
+  text-align: center;
   
 }
+
 
 
 #search::placeholder {
@@ -138,6 +252,7 @@ h1 {
   text-align: center;
   color: var(--oxford-blue);
 }
+
 
 #list {
   /* Remove default list styling */
@@ -176,8 +291,6 @@ main {
 }
 
 
-
-
 /* --country details section-- */
 
 #country-details h2, 
@@ -207,6 +320,7 @@ main {
   outline: none;
   font-size: 15px;
   transition: 0.4s;
+  animation: var(--display-animation);
 }
 
 .active, .accordion:hover {
@@ -230,7 +344,7 @@ main {
   background-color: white;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.2s ease-in-out;
+  transition: max-height 0.2s ease-out;
 }
 
 .panel p {
@@ -242,6 +356,7 @@ main {
   background: var(--carolina-blue);
   border-radius: 0.4rem;
 }
+
 
 .panel p a {
   text-decoration: none;
@@ -283,20 +398,32 @@ footer .links-container {
 }
 
 .links-container > a:visited {
-  color: var(--white-color);
+  color: var(--columbia-blue);
 }
 
 .links-container > a {
   text-decoration: none;
-  color: #79B9D4;
+  color: var(--white-color);
   padding: 0.2rem;
+
+}
+
+.links-container > a,
+.links-container span {
+  font-size: 0.8rem;
 }
 
 
-.links-container > a:hover,
-.links-container span:hover {
+.links-container > a:hover {
   color: var(--columbia-blue);
+  transition: all 0.2s ease-out;
 }
+
+
+
+
+/*======================DESKTOP VERSION============== */
+
 
 
 
