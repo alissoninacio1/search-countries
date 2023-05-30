@@ -69,7 +69,7 @@ fetch(url)
                     name: selection.name.common,
                     officialName: selection.name.official,
                     continent: selection.continents,
-                    border: (selection.borders) ? selection.borders.join(', ') : 'the sea (island)', 
+                    border: (selection.borders) ? selection.borders.join(', ') : 'the sea', 
                     capital: selection.capital,
                     currency: Object.values(selection.currencies)[0].name, 
                     symbol: Object.values(selection.currencies)[0].symbol,
@@ -99,7 +99,7 @@ fetch(url)
                     <button class="accordion">Country</button>
                     <div class="panel">
                         <p>
-                             ${detailsToUse.name} is in ${detailsToUse.officialName} and borders with ${detailsToUse.border}. 
+                             ${detailsToUse.name} is in ${detailsToUse.continent} and borders with ${detailsToUse.border}. 
                         </p>
                     </div>
 
@@ -144,7 +144,7 @@ fetch(url)
                     <button class="accordion">Flag</button>
                     <div class="panel">
                         <h3>Official Flag</h3>
-                        <img src=${detailsToUse.countryFlag} alt=${detailsToUse.altFlagImg} id='offical-image'>
+                        <img src=${detailsToUse.countryFlag} alt=${detailsToUse.altFlagImg} id='official-image'>
                     </div>                    
                     `
                     //flag.svg or flag.png and flag.alt

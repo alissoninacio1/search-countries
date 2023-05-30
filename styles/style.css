@@ -187,15 +187,22 @@ main {
   font-family: var(--lora);
 }
 
-/* ===============ACCORDION FEATURE================= */
+#country-details {
+  margin-top: 0.5rem;
+  border-top: solid var(--oxford-blue) 0.2rem;
+}
+
+/*----------- accordion feature ----------------*/
 
 .accordion {
   background-color: var(--celestial-blue);
   color: var(--white-color);
+  font-family: var(--lora);
   cursor: pointer;
   padding: 15px;
   width: 100%;
   border: none;
+  border-radius: 0.2rem;
   text-align: left;
   outline: none;
   font-size: 15px;
@@ -223,7 +230,74 @@ main {
   background-color: white;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease-out;
+  transition: max-height 0.2s ease-in-out;
 }
+
+.panel p {
+  font-family: var(--noto-sans);
+  margin: 0.4rem auto;
+  text-align: left;
+  font-size: 1rem;
+  padding: 0.8rem;
+  background: var(--carolina-blue);
+  border-radius: 0.4rem;
+}
+
+.panel p a {
+  text-decoration: none;
+}
+
+.panel p a:link {
+  color: var(--columbia-blue);
+}
+
+.panel p a:visited {
+  color: var(--white-color);
+}
+
+.panel p a:hover {
+  color: var(--celestial-blue);
+}
+
+
+.panel #official-image {
+  display: block;
+  margin: auto;
+}
+
+
+/* ---footer ---- */
+
+footer {
+  margin-top: 0.5rem;
+  background: var(--oxford-blue);
+  color: var(--white-color);
+  font-family: var(--noto-sans);
+}
+
+footer .links-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.links-container > a:visited {
+  color: var(--white-color);
+}
+
+.links-container > a {
+  text-decoration: none;
+  color: #79B9D4;
+  padding: 0.2rem;
+}
+
+
+.links-container > a:hover,
+.links-container span:hover {
+  color: var(--columbia-blue);
+}
+
+
 
 
