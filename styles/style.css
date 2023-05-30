@@ -46,7 +46,7 @@ input:focus::-webkit-input-placeholder  {
 }
   
 .menu-icon > div  {
-   width: 2.5rem;
+   width: 2rem;
    height: 0.3125rem;
    background-color: var(--white-color);
    margin: 0.375rem 0 0;
@@ -135,7 +135,7 @@ nav {
 #links-menu > a {
   text-decoration: none;
   color: var(--white-color);
-  font-size: 1rem;
+  font-size: 0.8rem;
   padding: 1rem;
   animation: var(--display-animation);
 }
@@ -410,7 +410,7 @@ footer .links-container {
 
 .links-container > a,
 .links-container span {
-  font-size: 1rem;
+  font-size: 0.85rem;
 }
 
 
