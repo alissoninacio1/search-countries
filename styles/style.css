@@ -135,7 +135,7 @@ nav {
 #links-menu > a {
   text-decoration: none;
   color: var(--white-color);
-  font-size: 0.85rem;
+  font-size: 1rem;
   padding: 1rem;
   animation: var(--display-animation);
 }
@@ -410,7 +410,7 @@ footer .links-container {
 
 .links-container > a,
 .links-container span {
-  font-size: 0.85rem;
+  font-size: 1rem;
 }
 
 
