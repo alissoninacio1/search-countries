@@ -55,14 +55,14 @@ h1 {
 #form-user button {
   display: block;
   padding: 0.4rem;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 600;
   margin: 0.2rem;
   border-radius: 0.4rem;
   border: solid var(--carolina-blue);
   color: var(--white-color);
   background: var(--carolina-blue);
-  width: 28%;
+  width: 45%;
 }
 
 #form-user button:hover {
