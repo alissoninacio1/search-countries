@@ -479,10 +479,18 @@ footer .links-container {
     background: var(--carolina-blue);
   }
 
-  #list {
+  .accordion {
+    display: block;
+  }
+  
+  #list,
+  .accordion,
+  .panel {
     max-width: 80%;
     margin: auto;
   }
+
+ 
  
 
   footer .links-container {
