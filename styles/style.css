@@ -453,7 +453,8 @@ footer .links-container {
     flex-direction: row;
   }
 
-  a, 
+  footer a, 
+  nav a,
   span {
     font-size: 0.6rem !important;
   }
