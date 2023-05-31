@@ -461,7 +461,7 @@ footer .links-container {
 
 /* SETTING BUTTONS  AND THE HEADER SIZE  OF INPUT----PENDING ---- REMOVE THIS COMMENT */
 
-  button {
+  #form-user button {
     width: 8rem !important;
   }
 
