@@ -426,5 +426,51 @@ footer .links-container {
 
 
 
+@media only screen and (min-width: 40rem) {
 
 
+
+  nav .menu-icon {
+    display: none;
+  }
+
+  nav #links-menu {
+    display: block;
+  }
+
+  #links-menu {
+    text-align: right;
+  }
+
+  nav:first-child::before {
+    content: '🌍';
+    position: absolute;
+    left: 2rem;
+    cursor: not-allowed;
+  }
+
+  #form-user {
+    flex-direction: row;
+  }
+
+  a, 
+  span {
+    font-size: 0.6rem !important;
+  }
+
+  button {
+    
+  }
+
+
+  footer .links-container {
+    flex-direction: row;
+    justify-content: space-between;
+
+  }
+
+  span {
+    order: -1;
+  }
+
+}
