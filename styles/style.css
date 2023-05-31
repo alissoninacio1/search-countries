@@ -458,15 +458,15 @@ footer .links-container {
     font-size: 0.6rem !important;
   }
 
+/* SETTING BUTTONS  AND THE HEADER SIZE  OF INPUT----PENDING ---- REMOVE THIS COMMENT */
+
   button {
-    
+    width: 8rem !important;
   }
 
 
   footer .links-container {
     flex-direction: row;
-    justify-content: space-between;
-
   }
 
   span {
