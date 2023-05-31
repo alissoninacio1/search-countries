@@ -36,8 +36,6 @@ input:focus::-webkit-input-placeholder  {
 /* =====================MOBILE VERSION================= */
 
 
-
-
 /* --------hamburguer menu ---------*/
 /* menu icon styles */
 .menu-icon {
@@ -223,6 +221,9 @@ h1 {
 }
 
 
+
+
+
 /* ---main list---- */
 
 #search {
@@ -385,6 +386,7 @@ footer {
   background: var(--oxford-blue);
   color: var(--white-color);
   font-family: var(--noto-sans);
+  
 }
 
 footer .links-container {
@@ -428,7 +430,7 @@ footer .links-container {
   }
 
   main {
-    height: 72vh;
+    height: 65vh;
   }
 
   nav .menu-icon {
@@ -487,10 +489,35 @@ footer .links-container {
   footer .links-container {
     flex-direction: row;
     justify-content: space-between;
+    padding-top: 2rem;
+    padding-inline: 3rem;
   }
 
   span {
     order: -1;
   }
 
+
+  /* animation added with JS */
+
+  @keyframes searchEffect {
+    100% {
+      transform: scale(1);
+    }
+
+    0%{
+      transform: scale(0.9);
+    }
+  }
+
+  .loading-search {
+    animation: searchEffect 2s ease 0s 1 normal forwards ;
+  }
+
+}
+
+@media only screen and (min-width: 2064px) {
+  main {
+    height: 80vh;
+  }
 }

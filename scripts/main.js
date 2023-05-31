@@ -32,14 +32,16 @@ ScrollReveal({
     footer
 `);
 
+
+
+// on search add a basic effect using events
 const searchBar = document.querySelector('#search')
-const main = document.querySelector('main')
 
 searchBar.addEventListener('keydown', () => {
-    main.style.height = '40vh'
+    searchBar.classList.add('loading-search')
+    
 })
 
-
 searchBar.addEventListener('blur', () => {
-    main.style.height = '72vh'
+    searchBar.classList.remove('loading-search')
 })
