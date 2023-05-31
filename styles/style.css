@@ -361,11 +361,10 @@ main {
 
 .panel p a {
   text-decoration: none;
+  color: var(--white-color);
 }
 
-.panel p a:link {
-  color: var(--columbia-blue);
-}
+
 
 
 .panel p a:hover {

@@ -125,7 +125,7 @@ fetch(url)
                         <p>
                             <a href=${detailsToUse.seeMaps} target='_blank'> 
                                 Click here 
-                            <a> 
+                            </a> 
                             to see ${detailsToUse.name} on Google Maps.
                         </p>
                     </div>
