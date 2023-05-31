@@ -366,9 +366,6 @@ main {
   color: var(--columbia-blue);
 }
 
-.panel p a:visited {
-  color: var(--white-color);
-}
 
 .panel p a:hover {
   color: var(--celestial-blue);
@@ -397,9 +394,6 @@ footer .links-container {
   padding: 1rem;
 }
 
-.links-container > a:visited {
-  color: var(--columbia-blue);
-}
 
 .links-container > a {
   text-decoration: none;
@@ -426,11 +420,15 @@ footer .links-container {
 
 
 
-@media only screen and (min-width: 40rem) {
+@media only screen and (min-width: 45rem) {
 
+
+  h1 {
+    color: var(--white-color);
+  }
 
   main {
-    height: 75vh;
+    height: 72vh;
   }
 
   nav .menu-icon {
@@ -454,6 +452,8 @@ footer .links-container {
 
   #form-user {
     flex-direction: row;
+    padding: 2rem;
+    justify-content:center;
   }
 
   footer a, 
@@ -462,12 +462,27 @@ footer .links-container {
     font-size: 0.9rem !important;
   }
 
-/* SETTING BUTTONS  AND THE HEADER SIZE  OF INPUT----PENDING ---- REMOVE THIS COMMENT */
-
   #form-user button {
-    width: 8rem !important;
+    width: 25%;
   }
 
+  #userInput {
+    width: 50%;
+  }
+
+  main {
+    background: var(--oxford-blue);
+  }
+
+  header {
+    background: var(--carolina-blue);
+  }
+
+  #list {
+    max-width: 80%;
+    margin: auto;
+  }
+ 
 
   footer .links-container {
     flex-direction: row;

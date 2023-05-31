@@ -17,3 +17,29 @@ menu.addEventListener('click', () => {
 })
 
 
+
+// lib for reveal when load
+
+ScrollReveal({
+    origin: 'left',
+    distance:'30px', 
+    duration: '200',
+}).reveal(`
+    nav,
+    #form-user,
+    main,
+    #list,
+    footer
+`);
+
+const searchBar = document.querySelector('#search')
+const main = document.querySelector('main')
+
+searchBar.addEventListener('keydown', () => {
+    main.style.height = '40vh'
+})
+
+
+searchBar.addEventListener('blur', () => {
+    main.style.height = '72vh'
+})
