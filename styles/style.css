@@ -483,6 +483,12 @@ footer .links-container {
     display: block;
   }
   
+  #search {
+    display: block;
+    margin: auto;
+    max-width: 75%;
+  }
+
   #list,
   .accordion,
   .panel {
