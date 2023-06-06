@@ -35,9 +35,7 @@ fetch(url)
             //passing the id to the 'a' element for changing the screen to the country selected 
             list.innerHTML += `
                 <li class='countries-list'>
-                    <a href='#country-details' id='${el.toLowerCase()}'>
-                        ${el}
-                    </a>               
+                    <a href='#country-details' id='${el.toLowerCase()}'>${el}</a>               
                 </li>    
             `
         })
